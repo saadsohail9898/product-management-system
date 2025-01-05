@@ -89,6 +89,10 @@ The application will be available at: `http://localhost:4200`
 
 Implemented Features
 
+Home Page:
+
+- Gradient theme Homepage with static content and buttons to naviagte to Products list
+
 Products List Page:
 
 - Products are displayed using PrimeNG DataTable
@@ -118,6 +122,7 @@ Bonus Features:
 - Loading indicators are displayed during API calls
 - Basic error logging is implemented using NLog
 - Added support for a product image URL field and display
+- Implemenetd Gradient theme Homepage with static content and buttons to naviagte to Products list
 ## Project Structure
 
 ### Backend
