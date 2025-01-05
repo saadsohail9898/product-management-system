@@ -7,11 +7,13 @@ import { Observable } from 'rxjs';
 import { ProgressSpinnerModule } from 'primeng/progressspinner'
 import { CommonModule } from '@angular/common';
 import { ToastModule } from 'primeng/toast';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MenubarModule,ProgressSpinnerModule,CommonModule,ToastModule],
+  imports: [CardModule,ButtonModule,RouterOutlet, MenubarModule,ProgressSpinnerModule,CommonModule,ToastModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,7 +22,7 @@ export class AppComponent implements OnInit {
   title = 'urwave-frontend';
   items: MenuItem[] | undefined;
 
-  constructor(private router: Router, private loadingService: LoadingService) {
+  constructor(public router: Router, private loadingService: LoadingService) {
     this.loading$ = this.loadingService.loading$;
   }
   
@@ -35,18 +37,15 @@ export class AppComponent implements OnInit {
       },
       {
         label: 'Product List',
-        icon: 'pi pi-star',
+        icon: 'pi pi-list',
         command: () => {
           this.router.navigate(['/product-list']);
         }
-      },
-      {
-        label: 'Create Product',
-        icon: 'pi pi-search',
-        command: () => {
-          this.router.navigate(['/product-form']);
-        }
       }
     ]
+  }
+
+  goToProductList(){
+    this.router.navigate(['/product-list'])
   }
 }

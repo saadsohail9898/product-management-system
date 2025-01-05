@@ -2,6 +2,77 @@
 <div class="card">
   <p-menubar [model]="items" />
 </div>
+<div class="loading-spinner-container" *ngIf="loading$ | async">
+  <p-progressSpinner [style]="{ 'width': '50px', 'height': '50px' }"></p-progressSpinner>
+</div>
+
+<div class="homepage-container">
+<router-outlet></router-outlet>
+
+    <!-- Hero Section -->
+    <div *ngIf="router.url === '/'" class="hero-section">
+        <div class="hero-content">
+            <h1 class="text-6xl mb-4">Product Management App</h1>
+            <p class="text-xl mb-6">Streamline your product operations with our powerful management solution</p>
+            <div class="button-group">
+                <button pButton label="View Products" icon="pi pi-arrow-right" class="p-button-rounded p-button-lg" (click)="goToProductList()"></button>
+                <button pButton label="Learn More" icon="pi pi-info-circle" class="p-button-rounded p-button-outlined p-button-lg"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+        <p-card styleClass="feature-card">
+            <ng-template pTemplate="header">
+                <i class="pi pi-box text-4xl"></i>
+            </ng-template>
+            <h3>Product Management</h3>
+            <p>Efficiently manage your product catalog with our intuitive interface</p>
+        </p-card>
+
+        <p-card styleClass="feature-card">
+            <ng-template pTemplate="header">
+                <i class="pi pi-chart-line text-4xl"></i>
+            </ng-template>
+            <h3>Analytics</h3>
+            <p>Track product performance and insights in real-time</p>
+        </p-card>
+
+        <p-card styleClass="feature-card">
+            <ng-template pTemplate="header">
+                <i class="pi pi-users text-4xl"></i>
+            </ng-template>
+            <h3>Team Collaboration</h3>
+            <p>Work seamlessly with your team members</p>
+        </p-card>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <p-card>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2>1000+</h2>
+                    <p>Products Managed</p>
+                </div>
+                <div class="stat-item">
+                    <h2>50+</h2>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat-item">
+                    <h2>24/7</h2>
+                    <p>Support</p>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>
+
+<!-- <p-toast></p-toast>
+<div class="card">
+  <p-menubar [model]="items" />
+</div>
 <p-progressSpinner *ngIf="loading$ | async" [style]="{ 'width': '50px', 'height': '50px' }"></p-progressSpinner>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->

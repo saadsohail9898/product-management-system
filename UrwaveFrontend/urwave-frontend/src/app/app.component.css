@@ -1,3 +1,33 @@
+:host ::ng-deep .p-menubar {
+  background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+  border: none;
+  border-radius: 0;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+:host ::ng-deep .p-menubar .p-menuitem-text {
+  color: white !important;
+  font-weight: bold;
+}
+:host ::ng-deep .p-menubar .p-menuitem-link {
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-icon {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem {
+  margin-right: 0.5rem;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
 :host ::ng-deep .p-progress-spinner {
     position: fixed;
     top: 50%;
@@ -6,3 +36,96 @@
     z-index: 9999 !important;
   }
   
+  .homepage-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+  min-height: calc(100vh - 70px); /* Adjust based on your menubar height */
+  overflow-y: auto;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0f4788 0%, #357abd 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.stats-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item h2 {
+    color: #4a90e2;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4rem 1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+}

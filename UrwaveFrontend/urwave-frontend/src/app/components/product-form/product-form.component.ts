@@ -88,7 +88,7 @@ export class ProductFormComponent implements OnInit {
   hideDialog() {
     this.productDialog = false;
     this.submitted = false;
-    this.onDialogClose(false);
+    this.router.navigate(['/product-list']);
   }
 
   isFormValid(): boolean {
@@ -127,7 +127,7 @@ export class ProductFormComponent implements OnInit {
                 life: 3000
               });
               this.productDialog = false;
-              this.onDialogClose(false);
+              this.router.navigate(['/product-list']);
             }
             else{
               this.messageService.add({
@@ -160,7 +160,7 @@ export class ProductFormComponent implements OnInit {
                 life: 3000
               });
               this.productDialog = false;
-              this.onDialogClose(false);
+              this.router.navigate(['/product-list']);
             }
             else{
               this.messageService.add({
