@@ -31,7 +31,7 @@ A full-stack application built with .NET 8 and Angular 18.2.0 for managing produ
 
 1. Open SQL Server Management Studio
 2. Connect to your database server
-3. Run the script from `database/init.sql`
+3. Run the script from `database/init.sql` or you can also run the migrations from backend
 
 ### Backend Setup
 
@@ -118,7 +118,6 @@ Bonus Features:
 - Loading indicators are displayed during API calls
 - Basic error logging is implemented using NLog
 - Added support for a product image URL field and display
-- A price range filter is available for enhanced search functionality
 ## Project Structure
 
 ### Backend
