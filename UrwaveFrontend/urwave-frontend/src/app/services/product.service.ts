@@ -5,13 +5,15 @@ import { Product } from '../models/product';
 import { CreateProduct } from '../models/create-product';
 import { LoadingService } from './loading.service';
 import { catchError, finalize } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  private apiUrl = 'https://localhost:44370/api/products';
+  // private apiUrl = 'https://localhost:44370/api/products';
+  private apiUrl = `${environment.apiUrl}/products`
 
   constructor(private http: HttpClient, private loadingService: LoadingService) {}
 
