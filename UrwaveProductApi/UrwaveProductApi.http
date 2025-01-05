@@ -1,0 +1,6 @@
+@UrwaveProductApi_HostAddress = http://localhost:5194
+
+GET {{UrwaveProductApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

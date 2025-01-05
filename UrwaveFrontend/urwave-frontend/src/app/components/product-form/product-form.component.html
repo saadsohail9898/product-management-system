@@ -1,0 +1,51 @@
+<p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
+  styleClass="p-fluid" (visibleChange)="onDialogClose($event)">
+  <ng-template pTemplate="content">
+    <div class="flex flex-column gap-4">
+      <img [src]="product.imageUrl" [alt]="product.imageUrl"
+        class="product-image" *ngIf="product.imageUrl">
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" pInputText id="name" [(ngModel)]="product.name" required maxlength="101" autofocus 
+          #nameInput="ngModel" />
+        <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small>
+        <small class="p-error" *ngIf="product.name.length > 100">Name cannot be longer than 100
+          characters.</small>
+      </div>
+
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3" cols="20"
+          maxlength="501" #descInput="ngModel"></textarea>
+        <small class="p-error" *ngIf="submitted && !product.description">Description is required.</small>
+        <small class="p-error" *ngIf="product.description.length > 500">Description cannot be longer than 500
+          characters.</small>
+      </div>
+
+      <div class="field">
+        <label for="price">Price</label>
+        <p-inputNumber id="price" [(ngModel)]="product.price" mode="currency" currency="AED" locale="en-US" required
+          #priceInput="ngModel">
+        </p-inputNumber>
+        <small class="p-error" *ngIf="submitted && (product.price <= 0)">Price must be a positive number.</small>
+      </div>
+
+      <div class="field">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" pInputText id="imageUrl" [(ngModel)]="product.imageUrl" />
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <div class="flex justify-content-end gap-2">
+      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+      <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" 
+        [disabled]="!isFormValid()"
+        (click)="saveProduct()"></button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
